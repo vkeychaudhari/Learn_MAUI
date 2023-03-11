@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstappStepByStepNileshDemo.Views.MonkeysPage"
              Title="MonkeysPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout VerticalOptions="Center">
         <Label 
             Text="Welcome to MonkeysPage!"
-            VerticalOptions="Center" 
+            VerticalOptions="Center" VerticalTextAlignment="Center"
             HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

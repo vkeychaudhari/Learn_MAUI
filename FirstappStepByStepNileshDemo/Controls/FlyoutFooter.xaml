@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="FirstappStepByStepNileshDemo.Controls.FlyoutFooter">
-    <StackLayout>
-        <Label Text="Xaminals"
+    <StackLayout Background="{StaticResource Primary}">
+        <Label Text="@vkeychaudhari"
                TextColor="GhostWhite"
-               FontAttributes="Bold"
+               FontAttributes="Bold" FontSize="10"
                HorizontalOptions="Center" />
         <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
                TextColor="GhostWhite"
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center" Margin="0,-5,0,2" />
     </StackLayout>
 </ContentView>

@@ -1,4 +1,5 @@
-﻿using FirstappStepByStepNileshDemo.Models;
+﻿using FirstappStepByStepNileshDemo.Data;
+using FirstappStepByStepNileshDemo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace FirstappStepByStepNileshDemo.Controls
 {
-    public class AnimalSearchHandler : SearchHandler
+    public class MonkeySearchHandler : SearchHandler
     {
-        public IList<Animal> Animals { get; set; }
-        public Type SelectedItemNavigationTarget { get; set; }
-
         protected override void OnQueryChanged(string oldValue, string newValue)
         {
             base.OnQueryChanged(oldValue, newValue);
@@ -22,8 +20,8 @@ namespace FirstappStepByStepNileshDemo.Controls
             }
             else
             {
-                ItemsSource = Animals
-                    .Where(animal => animal.Name.ToLower().Contains(newValue.ToLower()))
+                ItemsSource = MonkeyData.Monkeys
+                    .Where(monkey => monkey.Name.ToLower().Contains(newValue.ToLower()))
                     .ToList<Animal>();
             }
         }
@@ -33,15 +31,11 @@ namespace FirstappStepByStepNileshDemo.Controls
             base.OnItemSelected(item);
             await Task.Delay(1000);
 
-            ShellNavigationState state = (App.Current.MainPage as Shell).CurrentState;
             // Note: strings will be URL encoded for navigation (e.g. "Blue Monkey" becomes "Blue%20Monkey"). Therefore, decode at the receiver.
             // This works because route names are unique in this application.
-            await Shell.Current.GoToAsync($"{GetNavigationTarget()}?name={((Animal)item).Name}");
-        }
-
-        string GetNavigationTarget()
-        {
-            return (Shell.Current as AppShell).Routes.FirstOrDefault(route => route.Value.Equals(SelectedItemNavigationTarget)).Key;
+            await Shell.Current.GoToAsync($"monkeydetails?name={((Animal)item).Name}");
+            // The full route is shown below.
+            // await Shell.Current.GoToAsync($"//animals/monkeys/monkeydetails?name={((Animal)item).Name}");
         }
     }
 }

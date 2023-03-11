@@ -1,3 +1,5 @@
+using FirstappStepByStepNileshDemo.Models;
+
 namespace FirstappStepByStepNileshDemo.Views;
 
 public partial class DogsPage : ContentPage
@@ -6,4 +8,12 @@ public partial class DogsPage : ContentPage
 	{
 		InitializeComponent();
 	}
+    async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        string dogName = (e.CurrentSelection.FirstOrDefault() as Animal).Name;
+        // This works because route names are unique in this application.
+        await Shell.Current.GoToAsync($"dogdetails?name={dogName}");
+        // The full route is shown below.
+        // await Shell.Current.GoToAsync($"//animals/domestic/dogs/dogdetails?name={dogName}");
+    }
 }

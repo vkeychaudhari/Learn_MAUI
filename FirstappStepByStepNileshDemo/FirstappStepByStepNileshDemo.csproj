@@ -49,9 +49,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\about.svg" />
+	  <None Remove="Resources\Images\bear.svg" />
 	  <None Remove="Resources\Images\code_demo.svg" />
 	  <None Remove="Resources\Images\community_demo.svg" />
+	  <None Remove="Resources\Images\elephant.svg" />
+	  <None Remove="Resources\Images\footprint.svg" />
 	  <None Remove="Resources\Images\graduation_cap.svg" />
+	  <None Remove="Resources\Images\help.svg" />
+	  <None Remove="Resources\Images\monkey.svg" />
+	  <None Remove="Resources\Images\pets.svg" />
 	  <None Remove="Resources\Images\trophy_demo.svg" />
 	</ItemGroup>
 

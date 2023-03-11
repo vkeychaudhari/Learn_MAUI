@@ -68,17 +68,17 @@
 
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Learn"
-                      Icon="graduation_cap.svg"
+        <ShellContent Title="Monkeys"
+                      Icon="monkey.svg"
                       ContentTemplate="{DataTemplate views:MonkeysPage}" />
-        <ShellContent Title="Community"
-                      Icon="community_demo.svg"
+        <ShellContent Title="Elephants"
+                      Icon="elephant.svg"
                       ContentTemplate="{DataTemplate views:ElephantsPage}" />
-        <ShellContent Title="LeaderBoard"
-                      Icon="trophy_demo.svg"
+        <ShellContent Title="Bears"
+                      Icon="bear.svg"
                       ContentTemplate="{DataTemplate views:BearsPage}" />
-        <Tab Title="Create"
-             Icon="code_demo.svg">
+        <Tab Title="Pets"
+             Icon="pets.svg">
             <ShellContent Title="Cats"
                           Icon="code_demo.svg"
                           ContentTemplate="{DataTemplate views:CatsPage}" />
@@ -99,10 +99,10 @@
     <ShellContent Route="about"
                   Style="{StaticResource AboutShell}"
                   Title="About"
-                  Icon="code_demo.svg" ContentTemplate="{DataTemplate local:MainPage}"/>
+                  Icon="about.svg" ContentTemplate="{DataTemplate local:MainPage}"/>
 
     <MenuItem Text="Help"
-              IconImageSource="code_demo.svg"
+              IconImageSource="help.svg"
               Command="{Binding HelpCommand}"
               CommandParameter="https://docs.microsoft.com/dotnet/maui/fundamentals/shell" />
 
